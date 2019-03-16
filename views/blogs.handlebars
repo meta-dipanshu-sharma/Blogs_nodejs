@@ -1,0 +1,29 @@
+<section id="blogs" class="container">
+    <h1>All Blogs</h1>
+
+    {{#each blogs}}
+    <div class="gig">
+        <h3>Author: {{author}}</h3>
+        <h3>Blog Title: {{title}}</h3>
+        <p>Description: {{description}}</p>
+        <ul>
+            <li><a class="btn btn-reverse">Contact the blogger</a></li>
+            <form action="/blogs/delete" >
+                <li>
+                    <button type="submit" value="{{id}}" name="id" class="btn btn-reverse my-style">Delete the blog</button>
+                </li>
+            </form>
+             <form action="/blogs/edit">
+                <li>
+                    <button type="submit" value="{{id}}" name="id" class="btn btn-reverse my-style">Edit the blog</button>
+                </li>
+            </form>
+        </ul>
+    </div>
+
+    {{else}}
+    <p>No blogs available</p>
+
+    {{/each}}
+
+</section>
